@@ -20,6 +20,13 @@
     <!-- Pingback -->
       <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 
+    <!-- Facebook Open Graph -->
+      <meta property="og:title" content="<?php the_title(); ?>"/>
+      <meta property="og:description" content="<?php echo strip_tags(get_the_excerpt($post->ID)); ?>" />
+      <meta property="og:url" content="<?php the_permalink(); ?>"/>
+      <meta property="og:type" content="<?php if (is_single() || is_page()) { echo "article"; } else { echo "website";} ?>" />
+      <meta property="og:site_name" content="<?php bloginfo('name'); ?>"/>
+
     <?php wp_head(); ?>
 
   </head>

@@ -58,6 +58,17 @@
   }
   add_action( 'wp_head', 'insert_image_src_rel_in_head', 5 );
 
+  // Add other metadata OG
+  add_filter('language_attributes', 'add_og_xml_ns');
+  function add_og_xml_ns($content) {
+    return ' xmlns:og="http://ogp.me/ns#" ' . $content;
+  }
+
+  add_filter('language_attributes', 'add_fb_xml_ns');
+  function add_fb_xml_ns($content) {
+    return ' xmlns:fb="https://www.facebook.com/2008/fbml" ' . $content;
+  }
+
   // De-register jQuery from Contact Form 7
   add_filter( 'wpcf7_load_js', '__return_false' );
   add_filter( 'wpcf7_load_css', '__return_false' );
