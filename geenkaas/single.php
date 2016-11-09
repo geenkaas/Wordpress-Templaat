@@ -4,7 +4,7 @@
 
     <?php if ( have_posts() ) : while( have_posts() ) : the_post (); ?>
 
-      <article id="<?= $post->post_parent; ?>" class="postwrapper">
+      <article id="<?php echo $post->post_parent; ?>" class="postwrapper">
 
         <header>
           <h1 class="pageheader">
@@ -19,6 +19,16 @@
         } ?>
 
         <?php the_content(); ?>
+        
+        <?php if ( is_singular() ) wp_enqueue_script( "comment-reply" ); ?>
+         <?php wp_list_comments( $args ); ?>
+
+ <?php wp_link_pages( $args ); ?>
+
+ <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+ <?php comments_template( $file, $separate_comments ); ?>
+ <?php comment_form(); ?>
+
 
       </article>
 
@@ -29,7 +39,7 @@
         single.php (U bent ingelogd als admin)
       </div>
       <div class="<?php echo $post->post_parent; ?>">
-        Parent (actie) ID = <?= $post->post_parent; ?>
+        Parent (actie) ID = <?php echo $post->post_parent; ?>
       </div>
     <?php } ?>
 

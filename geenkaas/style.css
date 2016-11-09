@@ -1,12 +1,14 @@
+
+
 /*
   Theme Name: Geenkaas
-  Theme URI: http://www.website.nl/
-  Description: Geenkaas Wordpress template for Klant
+  Theme URI: http://www.biebmagazine.nl/
+  Description: Geenkaas Wordpress template for Biebmagazine
   Author: Arne Maier
   Author URI: http://www.geenkaas.nl/
-  Date: Jun 2015
+  Date: Aug 2016
   Version: 1.0
-  Tags: Wordpress, HTML5, CSS3, jQuery, SEO, Web, Design, Development, Geenkaas
+  Text Domain: geenkaas
   
   License: MIT
   License URI: http://opensource.org/licenses/mit-license.php
@@ -18,7 +20,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, nav, sectio
   display: block;
   }
 audio, canvas, iframe, img, svg, video {
-      vertical-align: middle;
+  vertical-align: middle;
   }
 audio, canvas, progress, video {
   display: inline-block;
@@ -33,23 +35,19 @@ template {
   display: none;
   }
 * {
+  background: #e4e1e1;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   -moz-user-select: none;
   user-select: none;
   }
 html {
-  background: #e4e1e1;
-  -webkit-overflow-scrolling: touch;
-  -webkit-tap-highlight-color: rgba(255,0,0,0.7);
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
+  background: #fff;
   }
 html, button, input, select, textarea {
-  color: rgba(0,0,0,.9);
-  font: 1em/1.4 sans-serif;
+  color: rgba(0,0,0,.85);
+  font: 1em/1.4 'Open Sans', sans-serif;
   font-feature-settings: "kern", "liga", "case";
-  text-rendering: optimizeLegibility;
 	}
 body {
   cursor: default;
@@ -73,10 +71,16 @@ body {
   position: absolute;
   left: -666em;
   }
+.bypostauthor, .wp-caption-text, .wp-caption {
+  
+}
 /* @end */
 
 /* @group Sticky footer */
 
+footer {
+  background: #ccc;
+}
 html, body, .sitewrapper {
 	height: 100%;
 }
@@ -102,7 +106,6 @@ button, input, select, textarea {
   user-select: text;
   }
 ::selection {
-  background: #fe57a1;
   text-shadow: none;
   }
 /* @end */
@@ -112,69 +115,54 @@ button, input, select, textarea {
 
 
 /* @group Design */
+
 /* @group Typography */
 h1,h2,h3,h4,h5,h6 {
-  color: #e43332;
-  font-family: serif;
-  margin: 0 0 1em;
-  text-transform: uppercase;
+  font-family: 'Gudea', 'Open Sans', sans-serif;
+	margin: 0 0 20px;
+	text-transform: uppercase;
 	}
 h1 {
-  font-size: 1.6em;
+  font-size: 2em;
+  font-size: 2vw;
+  font-size-adjust auto;
+  margin-top: 0;
 	}
 h2 {
-  font-size: 1.4em;
+	font-size: 1.5em;
 	}
 h3 {
-  font-size: 1.2em;
+	font-size: 1.3em;
 	}
 h4 {
-  font-size: 1.1em;
+	font-size: 1.2em;
 	}
 h5 {
-font-size: 1.1em;
+	font-size: 1.1em;
 	}
 h6 {
-  font-size: 1.1em;
+	font-size: 100%;
 	}
 p {
-  margin: .6em 0 1em;
+	margin: 0 0 15px;
 	}
 hr {
   display: block;
   height: 1px;
   border: 0;
-  border-top: 1px solid #ccc;
-  margin: 1em 0;
+  border-top: 1px solid rgba(0,0,0,.8);
+  margin: .6em 0;
   padding: 0;
-	}
-/* @end */
-
-/* @group Lists */
-dl,
-menu,
-ol,
-ul {
-    margin: 1em 0;
-	}
-dd {
-    margin: 0 0 0 1em;
-	}
-menu,
-ol,
-ul {
-    padding: 0 0 0 1em;
 	}
 /* @end */
 
 /* @group Links */
 a {
   background: transparent;
-  color: #ff0101;
+  color: #cc0000;
   text-decoration: none;
   }
 a:visited {
-  color: #ff0161;
   }
 a:hover {
   color: #ff3131;
@@ -185,6 +173,34 @@ a:hover,
 a:active {
 	outline: 0;
 	}
+/* @end */
+
+/* @group Lists */
+ul {
+	list-style-type:square;
+	margin:.3em 0 0 1.6em;
+	padding:0
+}
+ol {
+	margin:.3em 0 0 3.2em;
+	padding:0;
+	list-style-image:none
+}
+li {
+	margin-bottom:.1em
+}
+dt {
+	font-weight:bold;
+	margin-bottom:.1em
+}
+dl {
+	margin-top:.2em;
+	margin-bottom:.5em
+}
+dd {
+	margin-left:1.6em;
+	margin-bottom:.1em
+}
 /* @end */
 
 /* @group Images */
@@ -350,15 +366,14 @@ input[type="submit"] {
 
 .sitewrapper {
 	}
-.maincontent {
+.contentwrapper {
+  min-width: 1024px;
+  margin: 0 auto;
+  max-width: 1280px;
+  width: 80%;
   }
 .bodywrapper {
 	}
-.banded {
-  border-bottom: 1px solid rgba(0,0,0,.2);
-  margin: 0 0 20px;
-  width: 100%;
-  }
 .alignwrapper {
   clear: both;
   }
@@ -401,7 +416,8 @@ input[type="submit"] {
 /* @group Navigation */
 
 .navwrapper {
-  background: #cec;
+  background: purple;
+  height: 40px;
 	}
 .navwrapper ul {
   margin: 0;
@@ -418,15 +434,17 @@ input[type="submit"] {
 .navwrapper > li:nth-child(1) {
   }
 .navwrapper a {
-  background: #cdc;
+  background: green;
+  color: #fff;
   display: inline-block;
   line-height: 40px;
   padding: 0 20px;
 	}
 .navwrapper a:hover,
-.navwrapper ul li.current-menu-item > a,
-.navwrapper li.current-page-ancestor > a {
-  background: #eee;
+.navwrapper ul li.current-menu-item > a:hover,
+.navwrapper li.current-page-ancestor > a:hover {
+  background: orange;
+  color: maroon;
   text-decoration: none;
   }
 .navwrapper li:nth-child(1) a {
@@ -482,10 +500,8 @@ input[type="submit"] {
 
 
 /* @group Posts */
-article {
-  }
 .postwrapper {
-padding: 20px;
+  padding: 20px;
   }
 
 p.readon {
@@ -562,6 +578,126 @@ p.readon a {
 /* @group Social media */
 /* @end */
 
+/* @group Gallery Popup */
+
+.gallerywrapper {
+  margin: 1em 0;
+}
+.gallery {
+  clear: both;
+  margin: auto;
+  padding-top: 20px;
+}
+.clearlayout .gallery {
+  float: right;
+}
+.gallery-item {
+	float: left;
+	margin-top: 10px;
+	text-align: center;
+	width: 0%;
+  cursor: pointer;
+	margin: 0 2% 15px 0;
+  transition: all 300ms ease-out;
+  width: 12.57%;
+}
+.gallery-icon {
+}
+.gallery-caption {
+  cursor: default;
+  font-size: 13px;
+	margin-left: 0;
+  text-align: center;
+}
+.gallery img {
+	border: 3px solid rgba(180,220,240,1);
+  transition: all 300ms ease-out;
+	width: 100%;
+}
+.gallery img:hover {
+	border: 3px solid rgba(255,255,255,1);
+}
+
+
+.popup {
+  background: rgba(0,0,0,.7);
+  font: 900 16px/40px 'Lato', sans-serif;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: none;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  text-align: center;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+.poppedimg {
+  background: url(images/icons/ajax-loader.gif) 50% 50% no-repeat;
+  background-size: contain;
+  height: 100%;
+  width: 100%;
+}
+.tempimg {
+  border: 12px solid #333;
+  height: 0px;
+  overflow: hidden;
+  width: 2px;
+}
+.controls {
+	height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.control {
+  background: rgba(0,0,0,0);
+  -webkit-transition: all 100ms ease-in-out;
+  -moz-transition: all 100ms ease-in-out;
+  transition: all 100ms ease-in-out;
+  cursor: pointer;
+  height: 100%;
+  width: 10%;
+}
+.popupclose {
+  color: #fff;
+  cursor: pointer;
+  height: 10%;
+  left: 10%;
+  position: absolute;
+  text-align: center;
+  width: 80%;
+}
+.popupclose:hover {
+  background: rgba(0,0,0,.1);
+  color: #a6c3d0;
+}
+.control.previous {
+  background: url(images/icons/icon_arrow_left.png) no-repeat 50% 50%;
+  background-size: 50%;
+   float: left;
+}
+.control.next {
+  background: url(images/icons/icon_arrow_right.png) no-repeat 50% 50%;
+  background-size: 50%;
+ float: right;
+}
+.control.previous:hover {
+  background: rgba(0,0,0,.3) url(images/icons/icon_arrow_left.png) no-repeat 50% 50%;
+  background-size: 60%;
+  color: #a6c3d0;
+}
+.control.next:hover {
+  background: rgba(0,0,0,.3) url(images/icons/icon_arrow_right.png) no-repeat 50% 50%;
+  background-size: 60%;
+  color: #a6c3d0;
+}
+
+/* @end */
+
 /* @end */
 
 
@@ -572,28 +708,30 @@ p.readon a {
 /* Lees then wide screens */
 @media only screen and (max-width: 1279px) {
 
-.contentwrapper {
-  width: 90%;
-  padding: 0 3%;
-	}
   }
 
 /* iPad horizontal */
 @media only screen and (max-width: 1023px) {
 .contentwrapper {
+  min-width: 1px;
+  padding: 0 2%;
   width: 100%;
-  padding: 0 5%;
 	}
+	
+.postwrapper {
+  padding: 0;
+  }
   }
 
 /* mobile phones horizontal */
 @media only screen and (max-width: 767px) {
+
 .c2 .column ,
 .c3 .column,
 .c4 .column,
 .c5 .column {
 	margin: 0;
-  width: 100%%;
+  width: 100%;
 	}
 .column {
   padding: 0;
@@ -606,7 +744,9 @@ p.readon a {
 /* mobile phones vertical */
 @media only screen and (max-width: 640px) {
 
-
+.contentwrapper {
+  padding: 0 31%;
+	}
 
   }
 

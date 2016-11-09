@@ -4,7 +4,7 @@
 
     <?php if ( have_posts() ) : while( have_posts() ) : the_post (); ?>
 
-      <article id="<?= $post->post_parent; ?>" class="postwrapper">
+      <article id="<?php echo $post->post_parent; ?>" class="postwrapper">
 
         <header>
           <h1 class="pageheader">
@@ -29,7 +29,7 @@
         index.php (U bent ingelogd als admin)
       </div>
       <div class="<?php echo $post->post_parent; ?>">
-        Parent (actie) ID = <?= $post->post_parent; ?>
+        Parent (actie) ID = <?php echo $post->post_parent; ?>
       </div>
     <?php } ?>
 
