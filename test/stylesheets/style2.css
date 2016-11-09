@@ -1,0 +1,25 @@
+/*
+  Theme Name: Geenkaas
+  Theme URI: http://www.website.nl/
+  Description: Geenkaas Wordpress template for Klant
+  Author: Arne Maier
+  Author URI: http://www.geenkaas.nl/
+  Date: Jun 2015
+  Version: 1.0
+  Tags: Wordpress, HTML5, CSS3, jQuery, SEO, Web, Design, Development, Geenkaas
+  
+  License: MIT
+  License URI: http://opensource.org/licenses/mit-license.php
+*/
+/* @group SASS */
+/* line 17, ../sass/style2.scss */
+input {
+  font-size: 14px;
+}
+
+/* line 21, ../sass/style2.scss */
+input {
+  color: black;
+}
+
+/* @end */
